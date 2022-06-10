@@ -34,8 +34,7 @@ const updateUser=async(req,res)=>{
     }=req;
     if(name===''||email===''||gender===''||status==='')
     return res.status(StatusCodes.BAD_REQUEST).send({msg:"Data is required"});
-    console.log("Update : ");
-    console.log(req.body);
+    
 
     const user=await UserDB.findByIdAndUpdate(
         userID,req.body,{

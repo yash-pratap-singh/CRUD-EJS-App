@@ -12,7 +12,6 @@ $('#update_user').submit(async function(event){
     $.map(unindexed_Array,function(n,i){
         data[n['name']]=n['value'];
     })
-    console.log(data);
     await axios.patch(`/api/users/${data.id}`,data);
     alert("Data Updated Succesfully");
 })
