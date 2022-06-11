@@ -20,7 +20,7 @@ const add_user = (req, res) => {
 const update_user = async (req, res) => {
 
     // Get that single user
-    await axios.get(`http://localhost:3000/api/users/${req.query.id}`)
+    await axios.get(`http://localhost:${PORT}/api/users/${req.query.id}`)
         .then(function(userdata){
              res.render('update_user',{user:userdata.data});
         })
